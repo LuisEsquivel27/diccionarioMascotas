@@ -1,0 +1,56 @@
+<div align="center" class="tituloMascota">
+    <h2>{{nombreMascota}}</h2>
+</div>
+
+<div class="row" *ngIf="tamResp !== 0">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-3 textCenter">
+        <img *ngIf="srcImg !== ''" [src]=srcImg class="imgDetalleMascota">
+        <label *ngIf="srcImg === ''" class="mgTop30">Imagen No Disponible</label>
+    </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-4"><label>Temperamento: </label></div>
+            <div class="col-sm-8"><label>{{temperamentMascota}}</label></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4"><label>Lugar de Or&iacute;gen: </label></div>
+            <div class="col-sm-8"><label>{{origenMascota}}</label></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4"><label>Promedio de vida: </label></div>
+            <div class="col-sm-8"><label>{{vidaMascota}} años</label></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4"><label>Descripci&oacute;n</label></div>
+            <div class="col-sm-8"><label>{{descripcionMascota}}</label></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4"><label>Wikipedia: </label></div>
+            <div class="col-sm-8">
+                <a href="{{urlMascota}}" target="_blank">{{urlMascota}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="tamResp === 0">
+    <div class="alert alert-danger" role="alert">
+        !No se encontr&oacute; informaci&oacute;n! Favor de realizar una nueva b&uacute;squeda
+    </div>
+</div>
+
+<div class="row mgTop2">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-secondary" routerLink="/listaMascotas" (click)="modalCarga()">Realizar nueva b&uacute;squeda</button>
+    </div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-secondary" routerLink="/home">Ir a Home</button>
+    </div>
+
+</div>

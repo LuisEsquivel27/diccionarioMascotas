@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+table tr:hover {
+    background-color: #666666;
+    cursor: pointer;
+}
+
+.showScroll {
+    height: 430px;
+    overflow-y: auto;
+}
+
+thead tr th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.mgTop5 {
+    margin-top: 5%;
+}
+
+.mgTop2 {
+    margin-top: 2%;
+}
+
+.mgTop30 {
+    margin-top: 30%;
+}
+
+.tituloMascota {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.imgDetalleMascota {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.maxWidth100 {
+    max-width: 100%;
+}

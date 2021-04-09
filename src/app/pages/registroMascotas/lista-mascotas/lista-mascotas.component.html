@@ -1,0 +1,63 @@
+<h1 align="center">
+    Lista de Gatos</h1>
+
+<div class="row maxWidth100">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 showScroll">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Origen</th>
+                    <th scope="col">Informaci&oacute;n</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mascota of datosMascota">
+                    <td>{{mascota.name}}</td>
+                    <td>{{mascota.origin}}</td>
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detalleModal" (click)="muestraDescripcion(mascota)">
+                            Vista Previa
+                          </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<div class="row maxWidth100 mgTop2">
+    <div class="col-sm-10"></div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-secondary" routerLink="/home">Ir a Home</button>
+    </div>
+
+</div>
+
+
+<!--MODAL DETALLE-->
+<div class="modal fade" id="detalleModal" tabindex="-1" role="dialog" aria-labelledby="detalleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{nombreMascota}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <div align="center">
+                    <img *ngIf="imgMascota !== ''" [src]=imgMascota height="100px">
+                    <label *ngIf="imgMascota === ''">Imagen No Disponible</label>
+                </div>
+                <div>
+                    <label>{{descripcionMascota}}</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" routerLink="/infoMascota">Ver Detalle</button>
+            </div>
+        </div>
+    </div>
+</div>
